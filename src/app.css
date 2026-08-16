@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+* {
+	@apply relative font-sans;
+}
+
+*::-webkit-scrollbar {
+	@apply hidden;
+}
+
+html,
+body {
+	@apply absolute m-0 h-full w-full overflow-hidden p-0 transition-colors;
+}

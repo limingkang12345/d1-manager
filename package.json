@@ -1,0 +1,83 @@
+{
+	"name": "d1-manager",
+	"description": "D1 Manager is a web UI and API for Cloudflare D1, a serverless SQL database. It provides a user-friendly interface for managing databases, tables, and records, as well as an API for performing operations programmatically. D1 Manager simplifies database management, enabling users to focus on their data.",
+	"version": "0.0.0",
+	"type": "module",
+	"files": [
+		".svelte-kit/cloudflare"
+	],
+	"scripts": {
+		"prepare": "husky",
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "playwright test",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"test:unit": "vitest",
+		"lint": "prettier --ignore-path .gitignore --check . && eslint .",
+		"format": "prettier --ignore-path .gitignore --write .",
+		"upload": "pnpm build && wrangler pages deploy --project-name d1-manager .svelte-kit/cloudflare",
+		"tail": "wrangler pages deployment tail --project-name d1-manager"
+	},
+	"devDependencies": {
+		"@ai-d/aid": "^0.1.5",
+		"@changesets/changelog-github": "^0.5.1",
+		"@changesets/cli": "^2.29.2",
+		"@cloudflare/workers-types": "^4.20250430.0",
+		"@eslint/js": "^9.25.1",
+		"@iconify/svelte": "^5.0.0",
+		"@playwright/test": "^1.52.0",
+		"@sveltejs/adapter-cloudflare": "^7.0.2",
+		"@sveltejs/kit": "^2.20.8",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"@tailwindcss/typography": "^0.5.16",
+		"@tailwindcss/vite": "^4.1.5",
+		"@types/debug": "^4.1.12",
+		"@types/sql.js": "^1.4.9",
+		"csv-parse": "^5.6.0",
+		"csv-stringify": "^6.5.2",
+		"daisyui": "^5.0.34",
+		"debug": "^4.4.0",
+		"eslint": "^9.25.1",
+		"eslint-config-prettier": "^10.1.2",
+		"eslint-plugin-svelte": "^3.5.1",
+		"globals": "^16.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.5.1",
+		"node-sql-parser": "^5.3.8",
+		"openai": "^4.96.2",
+		"prettier": "^3.5.3",
+		"prettier-plugin-organize-imports": "^4.1.0",
+		"prettier-plugin-svelte": "^3.3.3",
+		"prettier-plugin-tailwindcss": "^0.6.11",
+		"sql.js": "^1.13.0",
+		"svelte": "^5.28.2",
+		"svelte-check": "^4.1.6",
+		"svelte-i18n": "^4.0.1",
+		"tailwindcss": "^4.1.5",
+		"theme-change": "2.5.0",
+		"tslib": "^2.8.1",
+		"tsup": "^8.4.0",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.31.1",
+		"vite": "^6.3.4",
+		"vitest": "^3.1.2",
+		"wrangler": "^4.13.2",
+		"zod": "^3.24.3"
+	},
+	"lint-staged": {
+		"*.{ts,js,json,yaml,yml,svelte,html,css}": [
+			"prettier --write"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JacobLinCool/d1-manager.git"
+	},
+	"homepage": "https://github.com/JacobLinCool/d1-manager",
+	"bugs": {
+		"url": "https://github.com/JacobLinCool/d1-manager/issues"
+	},
+	"packageManager": "pnpm@10.10.0"
+}
