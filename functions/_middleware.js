@@ -1,9 +1,6 @@
 // functions/_middleware.js
 
 console.log('🔥 Middleware is executing!');
-export async function onRequest(context) {
-    // ... 其余代码不变
-}
 
 export async function onRequest(context) {
     // 1. 获取请求头中的 Authorization 信息
